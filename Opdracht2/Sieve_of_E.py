@@ -2,20 +2,22 @@ import time
 T1 = time.perf_counter()
 import sys
 f=open("prime.dat", "w")
-pp = 2
-ps = [pp]
-lim=int(sys.argv[1])
-while pp < lim:
-   pp += 1
-   for a in ps:
-       if pp%a==0:
-           break
-   else:
-      if pp not in ps:
-         ps.append(pp)
+N=int(sys.argv[1])
 
+PrimeList = list(range(0,N))
+PrimeList[1] = 0
+for i in range(1,N):
+    if PrimeList[i] !=0:
+         for j in range(2*i,N,i):
+          PrimeList[j] = 0
 
-for i in ps:
+ 
+A=[] 
+for i in PrimeList:
+    if i!=0:
+        A.append(i)
+          
+for i in A:
    f.write(str(i))
    f.write("\n")
    
@@ -23,4 +25,4 @@ T2 = time.perf_counter()
 
 
 
-print("Found " + str(len(ps)) + " Prime numbers smaller than "+ str(lim) + " in " +str(T2-T1))
+print("Found " + str(len(A)) + " Prime numbers smaller than "+ str(N) + " in " +str(T2-T1))
