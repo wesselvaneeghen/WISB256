@@ -2,6 +2,9 @@ import sys
 import math
 import random
 
+
+random.seed(sys.argv[3])
+
 L=float(sys.argv[2])
 def drop_needle(L):
     x=random.random()
