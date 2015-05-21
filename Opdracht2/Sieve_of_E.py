@@ -1,7 +1,7 @@
 import time
 T1 = time.perf_counter()
 import sys
-f=open("prime.dat", "w")
+f=open(sys.argv[2],"w")
 N=int(sys.argv[1])
 
 PrimeList = list(range(0,N))
