@@ -22,12 +22,11 @@ A = range(1,N+1)
 for i in A:
     i>=1
     if drop_needle(L)==True:
-        C.append(True)
+        C.append(1)
         
 print(str(len(C)) +" hits in "+ str(N) + " tries")
 
-P=len(C)/N #kans op succes benaderen
-
+P=float(len(C))/float(N) #kans op succes benaderen
 
 if L<=1:
     print("Pi = "+ str(2*L/P))
